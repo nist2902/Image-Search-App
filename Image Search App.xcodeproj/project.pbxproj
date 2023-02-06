@@ -13,7 +13,6 @@
 		1B888B74299116A900631B30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B888B72299116A900631B30 /* Main.storyboard */; };
 		1B888B76299116AA00631B30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B888B75299116AA00631B30 /* Assets.xcassets */; };
 		1B888B79299116AA00631B30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B888B77299116AA00631B30 /* LaunchScreen.storyboard */; };
-		1B888B812991170C00631B30 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B888B802991170C00631B30 /* NetworkManager.swift */; };
 		1B888B832991173D00631B30 /* ImagesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B888B822991173D00631B30 /* ImagesData.swift */; };
 		1B888B85299133E700631B30 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B888B84299133E700631B30 /* ImageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -27,7 +26,6 @@
 		1B888B75299116AA00631B30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B888B78299116AA00631B30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B888B7A299116AA00631B30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1B888B802991170C00631B30 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		1B888B822991173D00631B30 /* ImagesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesData.swift; sourceTree = "<group>"; };
 		1B888B84299133E700631B30 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,7 +62,6 @@
 			children = (
 				1B888B84299133E700631B30 /* ImageCollectionViewCell.swift */,
 				1B888B822991173D00631B30 /* ImagesData.swift */,
-				1B888B802991170C00631B30 /* NetworkManager.swift */,
 				1B888B6C299116A900631B30 /* AppDelegate.swift */,
 				1B888B6E299116A900631B30 /* SceneDelegate.swift */,
 				1B888B70299116A900631B30 /* ViewController.swift */,
@@ -148,7 +145,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B888B85299133E700631B30 /* ImageCollectionViewCell.swift in Sources */,
-				1B888B812991170C00631B30 /* NetworkManager.swift in Sources */,
 				1B888B71299116A900631B30 /* ViewController.swift in Sources */,
 				1B888B832991173D00631B30 /* ImagesData.swift in Sources */,
 				1B888B6D299116A900631B30 /* AppDelegate.swift in Sources */,
