@@ -4,8 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,18 +15,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zi0-B2-mAY">
-                                <rect key="frame" x="0.0" y="210" width="393" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Zi0-B2-mAY">
+                                <rect key="frame" x="0.0" y="103" width="393" height="56"/>
+                                <color key="barTintColor" red="0.93333339689999995" green="0.93333339689999995" blue="0.93333339689999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Y8m-Zw-KpA"/>
                                 </connections>
                             </searchBar>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2pc-Uw-ypl">
-                                <rect key="frame" x="16" y="362" width="361" height="456"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2pc-Uw-ypl">
+                                <rect key="frame" x="0.0" y="159" width="393" height="693"/>
+                                <color key="backgroundColor" red="0.93333339689999995" green="0.93333339689999995" blue="0.93333339689999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="p4F-83-kCw">
                                     <size key="itemSize" width="156" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -38,18 +35,27 @@
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="ImageCollectionViewCell" id="dlN-Rb-nvD">
                                         <rect key="frame" x="0.0" y="0.0" width="156" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="TgE-dT-BfK">
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="156" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
+                                        </view>
                                         <size key="customSize" width="156" height="128"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.22745099660000001" green="0.24313727020000001" blue="0.270588249" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="2pc-Uw-ypl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Dgk-u6-0kt"/>
+                            <constraint firstItem="2pc-Uw-ypl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Dq9-ep-hdw"/>
+                            <constraint firstAttribute="bottom" secondItem="2pc-Uw-ypl" secondAttribute="bottom" id="JKL-ar-kBp"/>
+                            <constraint firstItem="Zi0-B2-mAY" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Jij-Md-fRP"/>
+                            <constraint firstItem="Zi0-B2-mAY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YW0-qw-gW5"/>
+                            <constraint firstItem="Zi0-B2-mAY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="iI0-lz-iWp"/>
+                            <constraint firstItem="2pc-Uw-ypl" firstAttribute="top" secondItem="Zi0-B2-mAY" secondAttribute="bottom" id="kTm-d4-E8h"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CSl-h8-HSR"/>
                     <connections>
@@ -80,16 +86,23 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GrE-Bj-bdy">
                                                 <rect key="frame" x="0.0" y="0.0" width="67" height="34.333333333333336"/>
+                                                <color key="backgroundColor" red="0.30196079609999998" green="0.66666668650000005" blue="0.7019608021" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="tintColor" red="0.93333339689999995" green="0.93333339689999995" blue="0.93333339689999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Prev"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Prev">
+                                                    <color key="baseForegroundColor" red="0.97254908080000002" green="0.96078431610000004" blue="0.9098039269" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </buttonConfiguration>
                                                 <connections>
                                                     <action selector="prevButtonTapped:" destination="sRU-1C-t2p" eventType="touchUpInside" id="cwW-xK-owA"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzR-bX-ORW">
                                                 <rect key="frame" x="294" y="0.0" width="67" height="34.333333333333336"/>
+                                                <color key="backgroundColor" red="0.30196079609999998" green="0.66666668650000005" blue="0.7019608021" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Next"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Next">
+                                                    <color key="baseForegroundColor" red="0.97254908080000002" green="0.96078431610000004" blue="0.9098039269" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </buttonConfiguration>
                                                 <connections>
                                                     <action selector="nextButtonTapped:" destination="sRU-1C-t2p" eventType="touchUpInside" id="Ozg-80-hpa"/>
                                                 </connections>
@@ -102,11 +115,12 @@
                                     <constraint firstItem="Izt-qc-EuM" firstAttribute="leading" secondItem="Agh-Zh-OiW" secondAttribute="leading" id="yxU-ul-12l"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUA-pK-ElR">
-                                <rect key="frame" x="110" y="712.66666666666663" width="173" height="34.333333333333371"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUA-pK-ElR">
+                                <rect key="frame" x="82" y="661" width="228" height="66"/>
+                                <color key="backgroundColor" red="0.30196079609999998" green="0.66666668650000005" blue="0.7019608021" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Open image sourse">
-                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Open image source">
+                                    <color key="baseForegroundColor" red="0.97254908080000002" green="0.96078431610000004" blue="0.9098039269" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="sourceButtonTapped:" destination="sRU-1C-t2p" eventType="touchUpInside" id="x05-EV-wL7"/>
@@ -114,8 +128,9 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jtv-yp-0NW"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93333339689999995" green="0.93333339689999995" blue="0.93333339689999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="JNd-ae-DcL" firstAttribute="centerX" secondItem="jtv-yp-0NW" secondAttribute="centerX" id="BQI-2h-7b0"/>
                             <constraint firstItem="jtv-yp-0NW" firstAttribute="bottom" secondItem="pUA-pK-ElR" secondAttribute="bottom" constant="71" id="KfP-3W-C9F"/>
                             <constraint firstItem="Agh-Zh-OiW" firstAttribute="centerX" secondItem="pUA-pK-ElR" secondAttribute="centerX" id="Rof-eI-oFt"/>
                             <constraint firstItem="Agh-Zh-OiW" firstAttribute="top" secondItem="jtv-yp-0NW" secondAttribute="top" constant="28" id="Uw8-UK-DHo"/>
@@ -131,7 +146,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I0l-qJ-sDL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="915" y="-2"/>
+            <point key="canvasLocation" x="913.74045801526711" y="-2.1126760563380285"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="QfD-m8-ZTc">
@@ -152,7 +167,7 @@
                             </wkWebView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SoR-hg-1MT"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.22745099660000001" green="0.24313727020000001" blue="0.270588249" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <navigationItem key="navigationItem" id="2py-ap-GvG"/>
                     <connections>
@@ -170,6 +185,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eoN-CM-j9l">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.65490196078431373" green="0.44705882352941173" blue="0.49019607843137253" alpha="0.89803921568627454" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ygI-jE-Dcb"/>
@@ -180,12 +196,4 @@
             <point key="canvasLocation" x="-834" y="-2"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

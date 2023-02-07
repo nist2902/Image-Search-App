@@ -9,15 +9,12 @@
 //Add correct Segues
 //Add Correct custom cell
 //Add Comments and Marks
-//Refactor
-//MVC
 //Improve UI
 //Add Readme and .gitignore
 
 import UIKit
 
-
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate {
+class ViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -26,10 +23,19 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupCollectionView()
+        searchBar.delegate = self
+    }
+    
+    private func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        searchBar.delegate = self
-        collectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: "ImageCollectionViewCell")
+        collectionView.register(ImageCollectionViewCell.nib(),
+                                forCellWithReuseIdentifier: "ImageCollectionViewCell")
+        let layout = UICollectionViewFlowLayout()
+        let itemSize = (view.frame.width - 15) / 3
+        layout.itemSize = CGSize(width: itemSize, height: itemSize)
+        collectionView.collectionViewLayout = layout
     }
     
     func fetchPhotos(for query: String) {
@@ -47,9 +53,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
 }
 
-
 // Extension for UICollectionViewDataSource
-extension ViewController {
+extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photos.count
     }
@@ -68,7 +73,7 @@ extension ViewController {
 }
 
 // Extension for UICollectionViewDelegate
-extension ViewController {
+extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let fullScreenVC = storyboard?.instantiateViewController(identifier: "FullScreenViewController") as! FullScreenViewController
         fullScreenVC.currentImageResult = photos[indexPath.row]
@@ -78,8 +83,24 @@ extension ViewController {
     }
 }
 
+// Extension for UICollectionViewDelegateFlowLayout
+extension ViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let cellSize = (view.frame.width - 15) / 3
+        return CGSize(width: cellSize, height: cellSize)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
+    }
+}
+
 // Extension for UISearchBarDelegate
-extension ViewController {
+extension ViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         if let text = searchBar.text {

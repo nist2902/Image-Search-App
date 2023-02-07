@@ -2,44 +2,30 @@
 //  ImageCollectionViewCell.swift
 //  Image Search App
 //
-//  Created by Николай Стукало on 06.02.2023.
+//  Created by Николай Стукало on 07.02.2023.
 //
+
+//import UIKit
+//
+//class ImageCollectionViewCell: UICollectionViewCell {
+//
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//        // Initialization code
+//    }
+//
+//}
 
 import UIKit
 
 class ImageCollectionViewCell: UICollectionViewCell {
-    private let imageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.clipsToBounds = true
-        imageView.contentMode = .scaleAspectFill
-        return imageView
-    }()
     
-    override init(frame: CGRect) {
-        super.init (frame: frame)
-        setupImageView()
-    }
+    @IBOutlet var imageView: UIImageView!
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func layoutSubviews () {
-        super.layoutSubviews()
-        imageView.frame = contentView.bounds
-    }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse ()
-        imageView.image = nil
-    }
-    
-    private func setupImageView() {
-        imageView.clipsToBounds = true
-        imageView.contentMode = .scaleAspectFill
-        contentView.addSubview(imageView)
-    }
-    
+    override func awakeFromNib() {
+            super.awakeFromNib()
+        }
+
     func configure(with urlString: String) {
         guard let url = URL(string: urlString) else {
             return
@@ -56,6 +42,10 @@ class ImageCollectionViewCell: UICollectionViewCell {
                 self?.imageView.image = UIImage(data: data)
             }
         }.resume()
+    }
+    
+    static func nib() -> UINib {
+        return UINib(nibName: "ImageCollectionViewCell", bundle: nil)
     }
 }
 

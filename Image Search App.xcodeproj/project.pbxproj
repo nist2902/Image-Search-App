@@ -14,10 +14,11 @@
 		1B888B76299116AA00631B30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B888B75299116AA00631B30 /* Assets.xcassets */; };
 		1B888B79299116AA00631B30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B888B77299116AA00631B30 /* LaunchScreen.storyboard */; };
 		1B888B832991173D00631B30 /* ImagesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B888B822991173D00631B30 /* ImagesData.swift */; };
-		1B888B85299133E700631B30 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B888B84299133E700631B30 /* ImageCollectionViewCell.swift */; };
 		1B888B8C29919E9700631B30 /* FullScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B888B8B29919E9700631B30 /* FullScreenViewController.swift */; };
 		1B888B8E29919ECE00631B30 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B888B8D29919ECE00631B30 /* WebViewController.swift */; };
 		1B888B90299261C500631B30 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B888B8F299261C500631B30 /* APIManager.swift */; };
+		1B888B97299290E900631B30 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B888B95299290E900631B30 /* ImageCollectionViewCell.swift */; };
+		1B888B98299290E900631B30 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B888B96299290E900631B30 /* ImageCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,10 +31,11 @@
 		1B888B78299116AA00631B30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B888B7A299116AA00631B30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B888B822991173D00631B30 /* ImagesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesData.swift; sourceTree = "<group>"; };
-		1B888B84299133E700631B30 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		1B888B8B29919E9700631B30 /* FullScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenViewController.swift; sourceTree = "<group>"; };
 		1B888B8D29919ECE00631B30 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		1B888B8F299261C500631B30 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		1B888B95299290E900631B30 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		1B888B96299290E900631B30 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				1B888B72299116A900631B30 /* Main.storyboard */,
-				1B888B84299133E700631B30 /* ImageCollectionViewCell.swift */,
+				1B888B95299290E900631B30 /* ImageCollectionViewCell.swift */,
+				1B888B96299290E900631B30 /* ImageCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 			files = (
 				1B888B79299116AA00631B30 /* LaunchScreen.storyboard in Resources */,
 				1B888B76299116AA00631B30 /* Assets.xcassets in Resources */,
+				1B888B98299290E900631B30 /* ImageCollectionViewCell.xib in Resources */,
 				1B888B74299116A900631B30 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,8 +182,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B888B8E29919ECE00631B30 /* WebViewController.swift in Sources */,
-				1B888B85299133E700631B30 /* ImageCollectionViewCell.swift in Sources */,
 				1B888B71299116A900631B30 /* ViewController.swift in Sources */,
+				1B888B97299290E900631B30 /* ImageCollectionViewCell.swift in Sources */,
 				1B888B90299261C500631B30 /* APIManager.swift in Sources */,
 				1B888B8C29919E9700631B30 /* FullScreenViewController.swift in Sources */,
 				1B888B832991173D00631B30 /* ImagesData.swift in Sources */,
@@ -337,8 +341,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -346,9 +350,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nstukalo.Image-Search-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -365,8 +372,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -374,9 +381,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nstukalo.Image-Search-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
