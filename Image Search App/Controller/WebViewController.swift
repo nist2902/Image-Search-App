@@ -9,14 +9,14 @@ import UIKit
 import WebKit
 
 class WebViewController: UIViewController {
-
     
     @IBOutlet weak var webView: WKWebView!
     
     var url: URL!
-
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            webView.load(URLRequest(url: url))
-        }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let request = URLRequest(url: url)
+        self.webView.load(request)
+    }
 }

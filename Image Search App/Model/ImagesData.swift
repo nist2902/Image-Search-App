@@ -11,7 +11,7 @@ struct APIResponse: Decodable {
     let images_results: [ImagesResult]
 }
 
-struct ImagesResult: Decodable {
+struct ImagesResult: Decodable, Equatable {
     var position: Int
     let link: String
     let thumbnail: String
