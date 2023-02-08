@@ -10,6 +10,8 @@ import UIKit
 class FullScreenViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var prevButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
     
     var currentImageResult: ImagesResult!
     var imagesResults: [ImagesResult]!
@@ -21,7 +23,7 @@ class FullScreenViewController: UIViewController {
     }
     
     func updateImageView() {
-        let url = URL(string: currentImageResult.thumbnail)!
+        let url = URL(string: currentImageResult.original)!
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let imageData = data {
                 DispatchQueue.main.async {
@@ -30,18 +32,24 @@ class FullScreenViewController: UIViewController {
             }
         }
         task.resume()
+        
+        // Скрывает кнопку переключения если изображение первое/последнее
+        position == 0 ? (prevButton.alpha = 0) : (prevButton.alpha = 1)
+        position == imagesResults.count - 1 ? (nextButton.alpha = 0) : (nextButton.alpha = 1)
     }
 
     @IBAction func nextButtonTapped(_ sender: UIButton) {
         if position < imagesResults.count - 1 {
-            currentImageResult = imagesResults[position + 1]
+            position += 1
+            currentImageResult = imagesResults[position]
             updateImageView()
         }
     }
 
     @IBAction func prevButtonTapped(_ sender: UIButton) {
         if position > 0 {
-            currentImageResult = imagesResults[position - 1]
+            position -= 1
+            currentImageResult = imagesResults[position]
             updateImageView()
         }
     }
@@ -52,4 +60,3 @@ class FullScreenViewController: UIViewController {
             present(webVC, animated: true, completion: nil)
     }
 }
-

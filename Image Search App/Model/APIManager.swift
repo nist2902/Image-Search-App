@@ -11,12 +11,15 @@ class APIManager {
     static let shared = APIManager()
     
     func fetchPhotos(for query: String, completion: @escaping (Result<[ImagesResult], Error>) -> Void) {
-        //Здесь неоходимо ввести свой API ключ serpapi.com или использовать мой для проверки работы
-        //Мой ключ "13ee4ef85881e4450b90e7ab810a8e9ef9ec42cb1bf517ee5ee688cee1c2ea80"
+        // Здесь неоходимо ввести свой API ключ serpapi.com или использовать мой для проверки работы
+        // let APIKey = "Enter your API key here"
+        // Мой ключ "13ee4ef85881e4450b90e7ab810a8e9ef9ec42cb1bf517ee5ee688cee1c2ea80"
         let APIKey = "13ee4ef85881e4450b90e7ab810a8e9ef9ec42cb1bf517ee5ee688cee1c2ea80"
-        //        let APIKey = "Enter your API key here"
         
-        let urlString = "https://serpapi.com/search.json?&q=\(query)&tbm=isch&ijn=0&api_key=\(APIKey)"
+        // Если поисковый запрос приходит на русском языке, то кодируем его чтобы сформировать корректный URL
+        let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!
+
+        let urlString = "https://serpapi.com/search.json?&q=\(encodedQuery)&tbm=isch&ijn=0&api_key=\(APIKey)"
         
         guard let url = URL(string: urlString) else {
             completion(.failure(NetworkingError.invalidURL))

@@ -17,4 +17,3 @@ struct ImagesResult: Decodable, Equatable {
     let thumbnail: String
     let original: String
 }
-

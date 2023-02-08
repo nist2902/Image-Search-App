@@ -5,17 +5,6 @@
 //  Created by Николай Стукало on 07.02.2023.
 //
 
-//import UIKit
-//
-//class ImageCollectionViewCell: UICollectionViewCell {
-//
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        // Initialization code
-//    }
-//
-//}
-
 import UIKit
 
 class ImageCollectionViewCell: UICollectionViewCell {
@@ -48,4 +37,3 @@ class ImageCollectionViewCell: UICollectionViewCell {
         return UINib(nibName: "ImageCollectionViewCell", bundle: nil)
     }
 }
-

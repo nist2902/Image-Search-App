@@ -4,13 +4,6 @@
 //
 //  Created by Николай Стукало on 06.02.2023.
 //
-//TODO:
-//Add loading process or just simple loading animation
-//Add correct Segues
-//Add Correct custom cell
-//Add Comments and Marks
-//Improve UI
-//Add Readme and .gitignore
 
 import UIKit
 
@@ -20,11 +13,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var photos: [ImagesResult] = []
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
-        searchBar.delegate = self
+        setupSearchBar()
     }
     
     private func setupCollectionView() {
@@ -53,7 +46,7 @@ class ViewController: UIViewController {
     }
 }
 
-// Extension for UICollectionViewDataSource
+// MARK: Конфигурируем ячейку
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photos.count
@@ -72,7 +65,7 @@ extension ViewController: UICollectionViewDataSource {
     }
 }
 
-// Extension for UICollectionViewDelegate
+// MARK: Переход по выбранной ячейке
 extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let fullScreenVC = storyboard?.instantiateViewController(identifier: "FullScreenViewController") as! FullScreenViewController
@@ -83,7 +76,7 @@ extension ViewController: UICollectionViewDelegate {
     }
 }
 
-// Extension for UICollectionViewDelegateFlowLayout
+// MARK: Размер ячейки и расстояние между ними
 extension ViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellSize = (view.frame.width - 15) / 3
@@ -99,8 +92,13 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-// Extension for UISearchBarDelegate
+// MARK: Работа со строкой поиска
 extension ViewController: UISearchBarDelegate {
+    func setupSearchBar() {
+        searchBar.delegate = self
+        searchBar.searchTextField.textColor = .black
+    }
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         if let text = searchBar.text {
