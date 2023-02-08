@@ -20,6 +20,7 @@
 		1B888B97299290E900631B30 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B888B95299290E900631B30 /* ImageCollectionViewCell.swift */; };
 		1B888B98299290E900631B30 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B888B96299290E900631B30 /* ImageCollectionViewCell.xib */; };
 		1BAD9E01299446EB0097488D /* RoundedButtonsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD9E00299446EB0097488D /* RoundedButtonsExtension.swift */; };
+		1BAD9E03299449470097488D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1BAD9E02299449470097488D /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		1B888B95299290E900631B30 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		1B888B96299290E900631B30 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		1BAD9E00299446EB0097488D /* RoundedButtonsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonsExtension.swift; sourceTree = "<group>"; };
+		1BAD9E02299449470097488D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		1B888B60299116A900631B30 = {
 			isa = PBXGroup;
 			children = (
+				1BAD9E02299449470097488D /* README.md */,
 				1B888B6B299116A900631B30 /* Image Search App */,
 				1B888B6A299116A900631B30 /* Products */,
 			);
@@ -172,6 +175,7 @@
 			files = (
 				1B888B79299116AA00631B30 /* LaunchScreen.storyboard in Resources */,
 				1B888B76299116AA00631B30 /* Assets.xcassets in Resources */,
+				1BAD9E03299449470097488D /* README.md in Resources */,
 				1B888B98299290E900631B30 /* ImageCollectionViewCell.xib in Resources */,
 				1B888B74299116A900631B30 /* Main.storyboard in Resources */,
 			);
